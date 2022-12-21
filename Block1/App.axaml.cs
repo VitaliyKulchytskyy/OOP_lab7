@@ -1,0 +1,31 @@
+using Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Markup.Xaml;
+using Block1.ViewModels;
+using Block1.Views;
+
+namespace Block1
+{
+    public partial class App : Application
+    {
+        public override void Initialize()
+        {
+            AvaloniaXamlLoader.Load(this);
+        }
+
+        public override void OnFrameworkInitializationCompleted()
+        {
+            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+            {
+                desktop.MainWindow = new MainWindow
+                {
+                    DataContext = new MainWindowViewModel(),
+                };
+                desktop.MainWindow.Height = 220;
+                desktop.MainWindow.Width = 300;
+            }
+
+            base.OnFrameworkInitializationCompleted();
+        }
+    }
+}

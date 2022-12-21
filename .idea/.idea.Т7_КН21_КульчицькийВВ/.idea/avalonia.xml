@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Block1/App.axaml" value="Block1/Block1.csproj" />
+        <entry key="Block1/Views/MainWindow.axaml" value="Block1/Block1.csproj" />
+        <entry key="Block2/App.axaml" value="Block2/Block2.csproj" />
+        <entry key="Block2/Views/MainWindow.axaml" value="Block2/Block2.csproj" />
+        <entry key="Block3/Views/MainWindow.axaml" value="Block3/Block3.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

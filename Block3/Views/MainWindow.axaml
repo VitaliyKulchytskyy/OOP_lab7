@@ -1,0 +1,37 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Block3.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="370" d:DesignHeight="340"
+        x:Class="Block3.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Block3">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <StackPanel Margin="15">
+        <Label Content="Enter first date (format: dd.mm.yyyy hh:mm:ss)"/>
+        <TextBox Text="24.11.2003 6:54:21" x:Name="GetFirstDate"></TextBox>
+        
+        <Label Content="Enter second date (format: dd.mm.yyyy hh:mm:ss)" Margin="0,10, 0, 0"/>
+        <TextBox Text="24.11.2022 16:31:08" x:Name="GetSecondDate" ></TextBox>
+        
+        <Label Content="Choose an answer output format" Margin="0,10, 0, 0"/>
+        <ComboBox Items="{Binding Formats}" 
+                  HorizontalAlignment="Stretch"
+                  x:Name="FormatBox"
+                  PlaceholderText="Output format"/>
+        <Button Content="Calculate"
+                HorizontalContentAlignment="Center"
+                HorizontalAlignment="Stretch" 
+                Margin="0, 10"
+                Click="Button_OnClick"/>
+        
+        <Label Content="Answer" Margin="0,10, 0, 0"/>
+        <TextBox IsReadOnly="True" x:Name="PrintOutput"></TextBox>
+    </StackPanel>
+
+</Window>

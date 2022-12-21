@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Block1.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="220"
+        x:Class="Block1.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Block1">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <StackPanel Margin="15">
+        <Label Content="Enter a string"/>
+        <TextBox Watermark="Some text" x:Name="GetString"></TextBox>
+        <Label Content="Choose a color of string" Margin="0,10, 0, 0"/>
+        <ComboBox Items="{Binding ColorNames}" 
+                  HorizontalAlignment="Stretch"
+                  x:Name="ColorBox"
+                  PlaceholderText="Names of color"/>
+        <Button Content="Enter"
+                HorizontalContentAlignment="Center"
+                HorizontalAlignment="Stretch" 
+                Margin="0, 10"
+                Click="Button_Click"/>
+        <Label x:Name="PrintString"></Label>
+    </StackPanel>
+
+</Window>

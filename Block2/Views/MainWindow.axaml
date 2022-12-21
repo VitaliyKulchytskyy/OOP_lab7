@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Block2.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="370" d:DesignHeight="250"
+        x:Class="Block2.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Block2">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <StackPanel Margin="15">
+        <Label Content="Percent of done homeworks"/>
+        <TextBox Watermark="60" x:Name="GetPercent"></TextBox>
+        <Label Content="Choose a student from KN21" Margin="0,10, 0, 0"/>
+        <ComboBox Items="{Binding Students}" 
+                  HorizontalAlignment="Stretch"
+                  x:Name="StudentsBox"
+                  PlaceholderText="Students"/>
+        <Button Content="Enter"
+                HorizontalContentAlignment="Center"
+                HorizontalAlignment="Stretch" 
+                Margin="0, 10"
+                Click="Button_OnClick"/>
+        <Label x:Name="StudentReport" HorizontalContentAlignment="Center"></Label>
+    </StackPanel>
+
+
+</Window>
